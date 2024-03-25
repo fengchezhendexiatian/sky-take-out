@@ -115,4 +115,30 @@ public class EmployeeController {
         employeeService.startOrStop(status,id);
         return Result.success();
     }
+
+    /**
+     * 根据id查询员工信息
+     * @param id
+     * @return
+     */
+    @GetMapping("/{id}")
+    @ApiOperation("根据id查询员工信息")
+    public  Result<Employee> getById(@PathVariable Long id){
+        Employee employee = employeeService.getById(id);
+        return  Result.success(employee);
+
+    }
+
+    /**
+     * 编辑员工信息
+     * @param employeeDTO
+     * @return
+     */
+    @PutMapping  //PUT 请求常用于更新资源
+    @ApiOperation("编辑员工信息")
+    public  Result update(@RequestBody EmployeeDTO employeeDTO){ //提交的json格式数据，所以注解为requestbody
+        log.info("编辑员工信息：{}",employeeDTO);
+        employeeService.update(employeeDTO);
+        return Result.success();
+    }
 }

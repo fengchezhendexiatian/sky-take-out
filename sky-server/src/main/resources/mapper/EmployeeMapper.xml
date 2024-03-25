@@ -14,7 +14,7 @@
 
 
 
-    <update id="update" ># parameterType="Employee"
+    <update id="update" ># parameterType="Employee",有错误
         update employee
         <set>
             <if test="name != null">name = #{name},</if>
