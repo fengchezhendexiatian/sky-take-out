@@ -12,3 +12,8 @@ sky:
     access-key-id: LTAI5tLAifvdk9YAR6JQBUEX
     access-key-secret: IOHFuZhz0uuJ3P1AHmSkOldCcmqa3W
     bucket-name: xuhaosky
+  redis:
+    host: localhost
+    port: 6379
+    auth: "123456"
+    database: 10
